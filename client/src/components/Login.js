@@ -6,6 +6,7 @@ import axios from '../api/axios';
 const LOGIN_URL = '/login';
 
 const Login = () => {
+    
     const { auth, setAuth, keepLogin } = useAuth();
     const navigate = useNavigate();
     const location = useLocation();
@@ -57,7 +58,7 @@ const Login = () => {
             setPwd('');
             console.log(from, accessToken);
             navigate(from, { replace: true });
-        } catch (err) {
+        } catch (err) {  
             if (!err?.response) {
                 setErrMsg('No Server Response');
             } else if (err.response?.status === 400) {
