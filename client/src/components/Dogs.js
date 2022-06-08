@@ -1,9 +1,8 @@
-import DogCard from "./DogCard";
 import { Link } from 'react-router-dom';
+import DogCard from "./DogCard";
 
 const Dogs = ({dogs, getDogs}) => {
     const paginationHandler = (e) => {
-        
         e.preventDefault();
         const name = e.target.getAttribute('data-name');
         if (name in dogs?.metadata?.links) {
@@ -13,7 +12,7 @@ const Dogs = ({dogs, getDogs}) => {
     }
     return (
         <article>
-            <h2>Dogs List(<Link to ="/dogs/create">Create</Link>)</h2>
+            <h2>Dogs List (<Link to="/dogs/create">Create</Link>)</h2>
             {dogs?.data?.length
                 ? (
                     <>

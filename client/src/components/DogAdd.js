@@ -7,18 +7,18 @@ const DogAdd = ({addHandler}) => {
     const formHandler = (e) => {
         e.preventDefault();
         if (!name) {
-            alert("Name is required!");
+            alert('Name is required!');
             return;
         }
-        addHandler({id:0, name});
+        addHandler({id: 0, name});
         navigate('/dogs');
     }
-    return(
+    return (
         <form onSubmit={formHandler}>
             <label>Name</label>
-            <input type= "text" onChange={(e)=>{setName(e.target.value)}} />
+            <input type="text" onChange={(e)=>{setName(e.target.value)}} />
             <button>Add</button>
-        </form> 
+        </form>
     );
 }
 
